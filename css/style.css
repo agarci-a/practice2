@@ -1,0 +1,48 @@
+.jumper{
+    visibility: hidden;
+     position: absolute;
+     left: -100px;
+}
+.jumper:focus{
+    visibility: visible;
+    left: 10%;
+    border: 2px, solid, blue;
+    background: yellow;
+}
+
+div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 3px, solid, #e91e63;
+    margin-top: 25px;
+}
+
+div > p{
+    border: 3px solid #708090;
+    background-color: grey;
+    border-radius: 50%;
+    padding: 45px 20px;
+    text-align: center;
+}
+div p:last-child{
+    grid-column: 1/-1;
+    border-radius: 0px;
+}
+
+@media screen and (min-width: 800px) {
+    main > div:first-child{
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        p{
+            border: 2px solid #000045;
+            border-radius: 0%;
+        }
+        :nth-child(3n){
+            grid-column:1/-1;
+        }
+        p:last-child{
+            display: none;
+        }
+        column-gap: 20%;
+    }
+}
